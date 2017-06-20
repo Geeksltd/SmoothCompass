@@ -3,12 +3,15 @@
   <metadata>
     <id>Zebble.Plugin.SmoothCompass</id>
     <version>1.0.0</version>
-    <title> SmoothCompass component for Zebble</title>
-    <description>...</description>
-    <authors>Your name</authors>
-    <owners>Your name</owners>
-    <!--<licenseUrl>http://your-website.com/Licence.txt</licenseUrl>-->
-    <copyright>Copyright ©2017 | Your company...</copyright>
+    <title>SmoothCompass plugin for Zebble for Xamarin</title>
+    <description>SmoothCompass plugin for Zebble for Xamarin</description>
+	<authors>Mobile App Technologies Ltd</authors>
+	<!--<owners>Your name</owners>-->
+	<!--<licenseUrl>http://your-website.com/Licence.txt</licenseUrl>-->
+	<copyright>Copyright ©2017 Mobile App Technologies Ltd - All rights reserved.</copyright>
+	<dependencies>
+		<dependency id="Zebble" version="4.0.182" />
+	</dependencies>
   </metadata>
   <files>
     <file src="lib\SmoothCompass.iOS.*" target="lib\Xamarin.iOS10\" />
