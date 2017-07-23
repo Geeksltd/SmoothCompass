@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Zebble.Plugin.SmoothCompass</id>
+    <version>4.0.144</version>
+    <title>Smooth Compass for Zebble for Xamarin</title>
+    <description>
+      The built-in compass sensor returns shaky data that randomly changes by 1-2 degrees, which is a problem for UI visualisation.
+      This plug-in solves that by combining data from compass, gyroscope and accelerometer to deliver a smooth and more natural result.
+    </description>
+    <iconUrl>https://raw.githubusercontent.com/Geeksltd/SmoothCompass/master/SmoothCompass/Shared/Icon.png</iconUrl>
+    <authors>Mobile App Technologies Ltd</authors>
+    <copyright>Copyright ©2017 Mobile App Technologies Ltd - All rights reserved.</copyright>
+    <dependencies>
+      <dependency id="Zebble" version="4.0.227" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\lib\Zebble.SmoothCompass.iOS.*" target="lib\Xamarin.iOS10\" />
+    <file src="..\..\lib\Zebble.SmoothCompass.Android.*" target="lib\MonoAndroid10\" />
+    <file src="..\..\lib\Zebble.SmoothCompass.UWP.*" target="lib\UAP10\" />
+  </files>
+</package>

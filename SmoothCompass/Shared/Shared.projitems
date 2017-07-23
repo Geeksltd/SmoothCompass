@@ -12,9 +12,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)SmoothCompass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)NuGet.nuspec" />
+    <None Include="$(MSBuildThisFileDirectory)NuGet\%40CreateNuGet.bat" />
+    <None Include="$(MSBuildThisFileDirectory)NuGet\NuGet.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)NuGet\" />
   </ItemGroup>
 </Project>

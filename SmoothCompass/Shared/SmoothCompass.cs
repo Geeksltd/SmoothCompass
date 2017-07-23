@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Zebble;
-
-namespace Zebble.Plugin
+﻿namespace Zebble.Plugin
 {
-	public class SmoothCompass : IDisposable
+    using System;
+    using System.Threading.Tasks;
+
+    public class SmoothCompass : IDisposable
     {
         public struct Heading { public float ActualCompass, SmoothValue; }
 
         const float FULL_CIRCLE = 360;
         const float COMPASS_APPROACH_SPEED = 0.25f;
-        const float RAD_TO_DEGREE = 180f / (float)Math.PI;
         const float ZERO_POINT_THRESHOLD = 20;
 
         bool MotionDetectorsExist, IStartedCompass, IStartedGyroscope, IStartedAccelerometer;
@@ -91,7 +87,7 @@ namespace Zebble.Plugin
 
             if (Math.Abs(rotation) < GyroscopeChangeSensitivity) return 0f;
 
-            return (float)(rotation * (int)SenrorDelay.Game * RAD_TO_DEGREE * 0.001f);
+            return (float)(rotation * (int)SenrorDelay.Game * 0.001f).ToDegreeFromRadians();
         }
 
         void AccelerometerChanged(MotionVector vector)
