@@ -288,3 +288,4 @@ __pycache__/
 *.xsd.cs
 /SmoothCompass/lib
 SmoothCompass/Shared/NuGet.exe
+SmoothCompass/Android/Zebble.exe
