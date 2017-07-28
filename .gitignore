@@ -286,6 +286,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-/SmoothCompass/lib
-SmoothCompass/Shared/NuGet.exe
-SmoothCompass/Android/Zebble.exe
+lib
+Shared/NuGet/NuGet.exe
