@@ -2,6 +2,7 @@
 {
     using System;
     using System.Threading.Tasks;
+    using Zebble.Device;
 
     public class SmoothCompass : IDisposable
     {
@@ -27,14 +28,14 @@
         {
             var result = new SmoothCompass
             {
-                MotionDetectorsExist = Device.Gyroscope.IsAvailable() && Device.Accelerometer.IsAvailable()
+                MotionDetectorsExist = Sensors.Gyroscope.IsAvailable() && Sensors.Accelerometer.IsAvailable()
             };
 
-            if (!Device.Compass.IsActive)
+            if (!Sensors.Compass.IsActive)
             {
                 result.IStartedCompass = true;
-                Device.Compass.Changed.Handle(h => result.CompassChanged((float)h));
-                await Device.Compass.Start();
+                Sensors.Compass.Changed.Handle(h => result.CompassChanged((float)h));
+                await Sensors.Compass.Start();
             }
 
             if (result.MotionDetectorsExist) await result.StartMotionDetectors();
@@ -44,18 +45,18 @@
 
         async Task StartMotionDetectors()
         {
-            if (!Device.Gyroscope.IsActive)
+            if (!Sensors.Gyroscope.IsActive)
             {
                 IStartedGyroscope = true;
-                Device.Gyroscope.Changed.Handle(h => GyroscopeChanged(h));
-                await Device.Gyroscope.Start();
+                Sensors.Gyroscope.Changed.Handle(h => GyroscopeChanged(h));
+                await Sensors.Gyroscope.Start();
             }
 
-            if (!Device.Accelerometer.IsActive)
+            if (!Sensors.Accelerometer.IsActive)
             {
                 IStartedAccelerometer = true;
-                Device.Accelerometer.Changed.Handle(h => AccelerometerChanged(h));
-                await Device.Accelerometer.Start();
+                Sensors.Accelerometer.Changed.Handle(h => AccelerometerChanged(h));
+                await Sensors.Accelerometer.Start();
             }
         }
 
@@ -192,9 +193,9 @@
         {
             Changed?.Dispose();
 
-            if (IStartedCompass) Device.Compass.Stop();
-            if (IStartedGyroscope) Device.Gyroscope.Stop();
-            if (IStartedAccelerometer) Device.Accelerometer.Stop();
+            if (IStartedCompass) Sensors.Compass.Stop();
+            if (IStartedGyroscope) Sensors.Gyroscope.Stop();
+            if (IStartedAccelerometer) Sensors.Accelerometer.Stop();
         }
     }
 }
