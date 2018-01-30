@@ -1,7 +1,8 @@
 ﻿{
   "dependencies": {
     "Newtonsoft.Json": "9.0.1",
-    "Zebble": "4.3.100"
+    "Zebble": "4.4.101",
+    "Zebble.Sensors": "1.1.100"
   },
   "frameworks": {
     "uap10.0.10240": {}
