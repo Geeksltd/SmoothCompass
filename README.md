@@ -1,4 +1,4 @@
-[logo]: https://raw.githubusercontent.com/Geeksltd/Zebble.SmoothCompass/master/Shared/NuGet/Icon.png "Zebble.SmoothCompass"
+[logo]: https://raw.githubusercontent.com/Geeksltd/Zebble.SmoothCompass/master/Shared/Icon.png "Zebble.SmoothCompass"
 
 
 ## Zebble.SmoothCompass
