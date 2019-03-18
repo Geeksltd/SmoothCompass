@@ -288,3 +288,4 @@ __pycache__/
 *.xsd.cs
 lib
 Shared/NuGet/NuGet.exe
+Zebble.exe
