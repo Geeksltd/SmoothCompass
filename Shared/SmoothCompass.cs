@@ -3,6 +3,7 @@
     using System;
     using System.Threading.Tasks;
     using Zebble.Device;
+    using Olive;
 
     public class SmoothCompass : IDisposable
     {
@@ -48,14 +49,14 @@
             if (!Sensors.Gyroscope.IsActive)
             {
                 IStartedGyroscope = true;
-                Sensors.Gyroscope.Changed.Handle(h => GyroscopeChanged(h));
+                Sensors.Gyroscope.Changed.Handle(GyroscopeChanged);
                 await Sensors.Gyroscope.Start();
             }
 
             if (!Sensors.Accelerometer.IsActive)
             {
                 IStartedAccelerometer = true;
-                Sensors.Accelerometer.Changed.Handle(h => AccelerometerChanged(h));
+                Sensors.Accelerometer.Changed.Handle(AccelerometerChanged);
                 await Sensors.Accelerometer.Start();
             }
         }
