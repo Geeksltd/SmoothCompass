@@ -89,7 +89,7 @@
 
             if (Math.Abs(rotation) < GyroscopeChangeSensitivity) return 0f;
 
-            return (float)(rotation * (int)SenrorDelay.Game * 0.001f).ToDegreeFromRadians();
+            return (float)(rotation * (int)SensorDelay.Game * 0.001f).ToDegreeFromRadians();
         }
 
         void AccelerometerChanged(MotionVector vector)
